@@ -127,9 +127,9 @@ const renderBlock = (block, type) => {
 			element.linkTitle.remove()
 		}
 	}
-	if (element.content) block.content_html ? element.content.innerHTML = block.content_html : element.content.remove()
+	// if (element.content) block.content_html ? element.content.innerHTML = block.content_html : element.content.remove()
 	if (element.description) block.description_html ? element.description.innerHTML = block.description_html : element.description.remove()
-	if (element.type) element.type.innerHTML = type.name
+	// if (element.type) element.type.innerHTML = type.name
 
 	type.container.append(template)
 }
@@ -142,7 +142,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	fetch(`https://api.are.na/v2/channels/${channel}?per=100`, {cache: 'no-store'})
 		.then(response => response.json())
 		.then(data => {
-			setBasics(data)
+			// setBasics(data)
 			parseBlocks(data)
 		})
 });
